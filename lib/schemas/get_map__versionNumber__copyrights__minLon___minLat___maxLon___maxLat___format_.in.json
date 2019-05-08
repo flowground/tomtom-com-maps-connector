@@ -1,0 +1,42 @@
+{
+    "type": "object",
+    "properties": {
+        "versionNumber": {
+            "required": true,
+            "enum": [
+                1
+            ],
+            "type": "integer"
+        },
+        "format": {
+            "required": true,
+            "default": "xml",
+            "enum": [
+                "json",
+                "jsonp",
+                "xml"
+            ],
+            "type": "string"
+        },
+        "minLon": {
+            "required": true,
+            "type": "number"
+        },
+        "minLat": {
+            "required": true,
+            "type": "number"
+        },
+        "maxLon": {
+            "required": true,
+            "type": "number"
+        },
+        "maxLat": {
+            "required": true,
+            "type": "number"
+        },
+        "callback": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

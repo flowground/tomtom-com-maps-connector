@@ -1,0 +1,208 @@
+{
+    "title": "Maps",
+    "description": "The Maps API web services suite offers the following APIs:\n  - Raster\n  The Maps Raster API renders map data that is divided into gridded sections called tiles. Tiles are square images (png or jpg format) in various sizes which are available at 19 different zoom levels, ranging from 0 to 20. For zoom level 0, the entire earth is displayed on one single tile, while at zoom level 20, the world is divided into 2<sup>40</sup> tiles.\n  - Vector\n  Similar to Maps Raster API, the Maps Vector API serves data on different zoom level ranging from 0 to 22. For zoom level 0, the entire earth is displayed on one single tile, while at zoom level 22, the world is divided into 2<sup>44</sup> tiles.\n  The Maps Vector Service delivers geographic map data packaged in a vector representation of squared sections called vector tiles. Each tile includes pre-defined collections of map features (points, lines, road shapes, water polygons, building footprints, ect.) delivered in one of the specified vector formats. Format of the tile is formally described using protobuf schema.",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/tomtom.com/maps/1.0.0/openapi.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://api.tomtom.com",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "api_key": {
+                "label": "key (api_key)",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "get_map__versionNumber__copyrights__format_": {
+            "main": "./lib/actions/get_map__versionNumber__copyrights__format_.js",
+            "title": "Copyrights whole world",
+            "description": "The Copyrights API returns copyright information for\nthe Maps API Raster Tile Service in JSON, JSONP, or XML format.\nThis call returns copyright information for the whole world.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_map__versionNumber__copyrights__format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_map__versionNumber__copyrights_caption__format_": {
+            "main": "./lib/actions/get_map__versionNumber__copyrights_caption__format_.js",
+            "title": "Captions",
+            "description": "This API returns copyright captions for the map service.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_map__versionNumber__copyrights_caption__format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_map__versionNumber__copyrights__minLon___minLat___maxLon___maxLat___format_": {
+            "main": "./lib/actions/get_map__versionNumber__copyrights__minLon___minLat___maxLon___maxLat___format_.js",
+            "title": "Copyrights bounding box",
+            "description": "The Copyrights API returns copyright information for\nthe Maps API Raster Tile Service in JSON, JSONP, or XML format.\nThis call returns copyright information for a specific bounding box.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_map__versionNumber__copyrights__minLon___minLat___maxLon___maxLat___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_map__versionNumber__copyrights__zoom___X___Y___format_": {
+            "main": "./lib/actions/get_map__versionNumber__copyrights__zoom___X___Y___format_.js",
+            "title": "Copyrights tile",
+            "description": "The Copyrights API returns copyright information for\nthe Maps API Raster Tile Service in JSON, JSONP, or XML format.\nThis call returns copyright information for the a specific map tile.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_map__versionNumber__copyrights__zoom___X___Y___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_map__versionNumber__staticimage": {
+            "main": "./lib/actions/get_map__versionNumber__staticimage.js",
+            "title": "Static Image",
+            "description": "The Static Image service renders a rectangular raster image\nin the style, size, and zoom level specified. The image can be requested\nusing either a center point plus width and height or a bounding box.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_map__versionNumber__staticimage.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_map__versionNumber__tile__layer___style___zoom___X___Y__pbf": {
+            "main": "./lib/actions/get_map__versionNumber__tile__layer___style___zoom___X___Y__pbf.js",
+            "title": "Tile",
+            "description": "The Maps API Vector Service delivers vector tiles, which are representations of square sections of map data.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_map__versionNumber__tile__layer___style___zoom___X___Y__pbf.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_map__versionNumber__tile__layer___style___zoom___X___Y___format_": {
+            "main": "./lib/actions/get_map__versionNumber__tile__layer___style___zoom___X___Y___format_.js",
+            "title": "Tile",
+            "description": "The Maps API Raster Service delivers raster tiles, which are representations of square sections of map data.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_map__versionNumber__tile__layer___style___zoom___X___Y___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetMap": {
+            "main": "./lib/actions/GetMap.js",
+            "title": "GetMap",
+            "description": "The GetMap call implements the Web Map Service 1.1.1 standard\nto access TomTom raster map tiles. This service is described\nin the response to the GetCapabilities API call.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetMap.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetCapabilities": {
+            "main": "./lib/actions/GetCapabilities.js",
+            "title": "GetCapabilities",
+            "description": "The GetCapabilities call is part of TomTom's implementation of version 1.1.1\nthe Web Map Service (WMS). It provides descriptions of the other calls\nthat are available in the implementation.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetCapabilities.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_map__versionNumber__wmts__key___wmtsVersion__WMTSCapabilities_xml": {
+            "main": "./lib/actions/get_map__versionNumber__wmts__key___wmtsVersion__WMTSCapabilities_xml.js",
+            "title": "WMTS",
+            "description": "The WMTS GetCapabilities call implements version 1.0.0 of\nthe <a href=\"http://www.opengeospatial.org/standards/wmts\">Web Map Tile Service</a>\n(WMTS) standard. It returns metadata that allows compatible calling systems to construct\ncalls to TomTom's raster map tile service. See the\n<a href=\"/maps-api/maps-api-documentation-raster/wmts\">documentation</a>\nfor more information on WMTS.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_map__versionNumber__wmts__key___wmtsVersion__WMTSCapabilities_xml.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

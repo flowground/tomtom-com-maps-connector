@@ -1,0 +1,33 @@
+{
+    "type": "object",
+    "properties": {
+        "versionNumber": {
+            "required": true,
+            "enum": [
+                1
+            ],
+            "type": "integer"
+        },
+        "service": {
+            "required": true,
+            "enum": [
+                "WMS"
+            ],
+            "type": "string"
+        },
+        "request": {
+            "required": true,
+            "enum": [
+                "GetCapabilities"
+            ],
+            "type": "string"
+        },
+        "version": {
+            "required": false,
+            "enum": [
+                "1.1.1"
+            ],
+            "type": "string"
+        }
+    }
+}

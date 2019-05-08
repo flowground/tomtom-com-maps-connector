@@ -1,0 +1,76 @@
+{
+    "type": "object",
+    "properties": {
+        "versionNumber": {
+            "required": true,
+            "enum": [
+                1
+            ],
+            "type": "integer"
+        },
+        "request": {
+            "required": true,
+            "enum": [
+                "GetMap"
+            ],
+            "type": "string"
+        },
+        "srs": {
+            "required": true,
+            "enum": [
+                "EPSG:3857",
+                "EPSG:4326"
+            ],
+            "type": "string"
+        },
+        "bbox": {
+            "required": true,
+            "pattern": "^(-*\\d+\\.*\\d*, *){3}(-*\\d+\\.*\\d*)$",
+            "type": "string"
+        },
+        "width": {
+            "required": true,
+            "type": "integer"
+        },
+        "height": {
+            "required": true,
+            "type": "integer"
+        },
+        "format": {
+            "required": true,
+            "enum": [
+                "image/jpeg",
+                "image/png"
+            ],
+            "type": "string"
+        },
+        "layers": {
+            "required": true,
+            "enum": [
+                "basic"
+            ],
+            "type": "string"
+        },
+        "styles": {
+            "required": false,
+            "enum": [
+                ""
+            ],
+            "type": "string"
+        },
+        "service": {
+            "required": false,
+            "enum": [
+                "WMS"
+            ],
+            "type": "string"
+        },
+        "version": {
+            "required": true,
+            "enum": [
+                "1.1.1"
+            ],
+            "type": "string"
+        }
+    }
+}
